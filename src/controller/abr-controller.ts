@@ -763,10 +763,9 @@ class AbrController implements AbrComponentAPI {
         }
       }
 
-      // skip candidates which change codec-family or video-range,
+      // skip candidates which change video-range,
       // and which decrease or increase frame-rate for up and down-switch respectfully
       if (
-        (currentCodecSet && levelInfo.codecSet !== currentCodecSet) ||
         (currentVideoRange && levelInfo.videoRange !== currentVideoRange) ||
         (upSwitch && currentFrameRate > levelInfo.frameRate) ||
         (!upSwitch &&
